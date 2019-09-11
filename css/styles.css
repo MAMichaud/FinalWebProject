@@ -1,0 +1,17 @@
+#nsSave, #nsSaveDefaults, #nsUpdate{
+    color: white;
+    background:#3388cc;
+    font-weight: normal;
+}
+
+#nsCancel{
+    color: black;
+    background:yellow;
+    font-weight: bold;
+}
+
+#nsDelete{
+    color: white;
+    background:#1d1d1d;
+    font-weight: normal;
+}

@@ -1,0 +1,344 @@
+<!--
+Mobile Web Development 
+Final Project: Space Ship Register
+Created by: Marc-Andre Michaud
+email:      mmichaud5263@conestogac.on.ca
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/lib/jquery.mobile-1.4.5.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/MMMyStyle.css" />
+
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+    <script src="js/lib/jquery-2.1.4.min.js"></script>
+    <script src="js/lib/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/lib/jquery.validate.js"></script>
+
+    <script src="js/MMDatabase.js"></script>
+    <script src="js/MMFeedbackDAL.js"></script>
+    <script src="js//MMGlobal.js"></script>
+    <script src="js//MMUtil.js"></script>
+    <script src="js//MMFacade.js"></script>
+</head>
+
+<body>
+
+    <div data-role="page" id="mmHomePage">
+
+        <header data-position="fixed">
+            <hgroup>
+            <h1 ><img src="img/logo.jpg" alt="Final Logo" class="responsive1">STARtrader</h1>
+            </hgroup>
+            <nav data-role="navbar" data-grid="c">
+                <ul>
+                    <li><a data-theme="a" data-icon="home" href="#" class="ui-button-active ui-state-persist">Home</a>
+                    </li>
+                    <li><a data-theme="a" data-icon="plus" href="#mmAddFeedbackPage">Register</a></li>
+                    <li><a data-theme="a" data-icon="grid" href="#mmViewFeedbackPage">Records</a></li>
+                    <li><a data-theme="a" data-icon="gear" href="#mmSettingsPage">Sign In</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div role="main" class="ui-content">
+            <h2>Travel the Stars Affordably</h2>
+
+            <p>Welcome to STARtrader. A starship rental company for all you space travel needs</p>
+        </br>
+        </br>
+            <div class="container">
+                    <div class="row">
+                            <div class="col-md-12">
+                                    <div class="col-md-6">
+                                        <a href="#"> <img src="img/normandy.jpg" alt="Normandy" style="width:80%"></a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <a href="#"> <img src="img/firefly.jpg" alt="Firefly" style="width:80%"></a>
+                                    </div>
+                            </div>
+                    </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                        <div class="col-md-12">
+                                <div class="col-md-6">
+                                    <a href="#"> <img src="img/halberd.jpg" alt="Halberd" style="width:80%"></a>
+                                </div>
+                                <div class="col-md-6">
+                                    <a href="#"> <img src="img/raider.png" alt="Raider" style="width:80%"></a>
+                                </div>
+                        </div>
+                </div>
+            </div>
+        </br>
+        </br>
+
+            <p>Please feel free to contact SR if you have any questions</p>
+            <a href="#" class="ui-btn ui-icon-plus ui-btn-icon-left">Call: 1-877-470-5240</a>
+            <a href="#" class="ui-btn ui-icon-plus ui-btn-icon-left">mmichaud5263@conestogac.on.ca</a>
+        </div><!-- /content -->
+
+        <footer data-role="footer" data-theme="b" data-position="fixed">
+            <h4>&copy; 2019 Marc-Andre Michaud</h4>
+        </footer>
+    </div>
+    <!-- Home Page -->
+
+
+
+
+
+
+    <div data-role="page" id="mmAddFeedbackPage">
+
+        <header data-position="fixed">
+            <hgroup>
+            <h1 ><img src="img/logo.jpg" alt="Final Logo" class="responsive1">STARtrader</h1>
+            </hgroup>
+            <nav data-role="navbar" data-grid="c">
+                <ul>
+                    <li><a data-theme="a" data-icon="home" href="#mmHomePage">Home</a></li>
+                    <li><a data-theme="a" data-icon="plus" href="#" class="ui-button-active ui-state-persist">Register</a>
+                    </li>
+                    <li><a data-theme="a" data-icon="grid" href="#mmViewFeedbackPage">Records</a></li>
+                    <li><a data-theme="a" data-icon="gear" href="#mmSettingsPage">Sign In</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+
+        <div role="main" class="ui-content">
+
+            <form id='mmForm' name='mmForm'>
+                <label for="text-1">Captian's Name:</label>
+                <input type="text" name="mmCName" id="mmCName" value="">
+
+                <label for="text-1">First Mate's Name:</label>
+                <input type="text" name="mmFMName" id="mmFMName" value="">
+
+                <div class="ui-field-contain">
+                    <label>Species:</label>
+                        <select name="mmType" id="mmType" class="mmType">
+                        </select>
+                </div>
+                <label for="text-1">Captain's Spacemail:</label>
+                <input type="text" name="mmEmail" id="mmEmail" value="">
+
+                <label for="textarea-1">Reviewer Comments:</label>
+                <textarea name="mmComments" id="mmComments"></textarea>
+
+                <label for="text-1">Rental Date:</label>
+                <input type="date" name="mmReviewDate" id="mmReviewDate" value="mm/dd/yyyy">
+
+                <label id="RatingsChk">
+                            <input type="checkbox" name="RatingsChkBox" id="RatingsChkBox">Do you have a crew?
+                </label>
+
+                <div id="ratingArea" hidden>
+
+                    <label for="number-1">Pilot</label>
+                    <input type="number" data-clear-btn="false" name="mmFoodRating" id="mmFoodRating" value="0">
+
+                    <label for="number-1">Enginer</label>
+                    <input type="number" data-clear-btn="false" name="mmServiceRating" id="mmServiceRating" value="0">
+
+                    <label for="number-1">Medic</label>
+                    <input type="number" data-clear-btn="false" name="mmValueRating" id="mmValueRating" value="0">
+
+                    <label for="text-1">Overall Rating (calculated):</label>
+                    <input type="text" name="mmOverallRating" id="mmOverallRating" value="" readonly><br>
+
+                </div>
+
+            </form>
+            <input type="submit" data-inline="true" id="mmSave" value="Save">
+
+        </div><!-- /content -->
+
+        <footer data-role="footer" data-theme="b" data-position="fixed">
+            <h4>&copy; 2019 Marc-Andre Michaud</h4>
+        </footer>
+    </div>
+    <!-- Add Feedback Page -->
+
+
+
+    <div data-role="page" id="mmViewFeedbackPage">
+
+        <header data-position="fixed">
+            <hgroup>
+            <h1 ><img src="img/logo.jpg" alt="Final Logo" class="responsive1">STARtrader</h1>
+            </hgroup>
+            <nav data-role="navbar" data-grid="c">
+                <ul>
+                    <li><a data-theme="a" data-icon="home" href="#mmHomePage">Home</a></li>
+                    <li><a data-theme="a" data-icon="plus" href="#mmAddFeedbackPage">Register</a></li>
+                    <li><a data-theme="a" data-icon="grid" href="#"
+                            class="ui-button-active ui-state-persist">Records</a></li>
+                    <li><a data-theme="a" data-icon="gear" href="#mmSettingsPage">Sign In</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+
+        <div role="main" class="ui-content">
+
+            <ul data-role="listview" data-inset="true" id="mmFeedbackList">
+                <!-- Populated by MMGetReviews() -->
+            </ul>
+
+        </div><!-- /content -->
+
+        <footer data-role="footer" data-theme="b" data-position="fixed">
+            <h4>&copy; 2019 Marc-Andre Michaud</h4>
+        </footer>
+    </div>
+    <!-- View Feedback Page -->
+
+
+
+    <div data-role="page" id="mmEditFeedbackPage">
+
+        <header data-position="fixed">
+            <hgroup>
+            <h1 ><img src="img/logo.jpg" alt="Final Logo" class="responsive1">STARtrader</h1>
+            </hgroup>
+            <nav data-role="navbar" data-grid="c">
+                <ul>
+                    <li><a data-theme="a" data-icon="home" href="#mmHomePage">Home</a></li>
+                    <li><a data-theme="a" data-icon="plus" href="#mmAddFeedbackPage">Register</a></li>
+                    <li><a data-theme="a" data-icon="grid" href="#mmViewFeedbackPage"
+                            class="ui-button-active ui-state-persist">Records</a></li>
+                    <li><a data-theme="a" data-icon="gear" href="#mmSettingsPage">Sign In</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+
+        <div role="main" class="ui-content">
+            <form id='mmEditForm'>
+                <label for="text-1">Captain's Name:</label>
+                <input type="text" name="mmEditCName" id="mmEditCName" value="">
+
+                <label for="text-1">First Mate's Name:</label>
+                <input type="text" name="mmEditFMName" id="mmEditFMName" value="">
+
+                <div class="ui-field-contain">
+                    <label>Type:</label>
+                        <select name="select-native-1" id="select-native-1" class="mmEditType">
+                                <option value="1" selected="selected">Other</option>
+                                <option value="2">Vulkan</option>
+                                <option value="3">Human</option>
+                         </select>
+                </div>
+
+                <label for="text-1">Captian's Smail:</label>
+                <input type="text" name="mmEditEmail" id="mmEditEmail" value="">
+
+                <label for="textarea-1">Reviewer Comments:</label>
+                <textarea name="mmEditComments" id="mmEditComments"></textarea>
+
+                <label for="text-1">Rental Date:</label>
+                <input type="text" name="mmEditReviewDate" id="mmEditReviewDate" value="mm/dd/yyyy">
+
+                <label id="RatingsEditChk">
+                            <input type="checkbox" name="RatingsEditChk" id="RatingsEditChk">Do you want to add your
+                    ratings?
+                </label>
+
+                <div id="ratingEditArea" hidden>
+
+                    <label for="number-1">Food Quality (0-5)</label>
+                    <input type="number" data-clear-btn="false" name="mmEditFoodRating" id="mmEditFoodRating" value="0">
+
+                    <label for="number-1">Service (0-5)</label>
+                    <input type="number" data-clear-btn="false" name="mmEditServiceRating" id="mmEditServiceRating"
+                        value="0">
+
+                    <label for="number-1">Value (0-5)</label>
+                    <input type="number" data-clear-btn="false" name="mmEditValueRating" id="mmEditValueRating"
+                        value="0">
+
+                    <label for="text-1">Overall Rating (calculated):</label>
+                    <input type="text" name="mmEditOverallRating" id="mmEditOverallRating" value="" readonly><br>
+
+                </div>
+
+            </form>
+            <div data-role="controlgroup" data-type="horizontal">
+                <button href="#" id="mmCancel" class="ui-btn ui-corner-all" data-role="button"
+                    data-theme="e">Cancel</button>
+                <button href="#" id="mmDelete" class="ui-btn ui-corner-all ui-btn-b" data-role="button"
+                    data-theme="a">Delete</button>
+                <button  id="mmUpdate" class="ui-btn ui-corner-all" data-role="button"
+                    data-theme="b">Update</button>
+            </div>
+
+        </div><!-- /content -->
+
+        <footer data-role="footer" data-theme="b" data-position="fixed">
+            <h4>&copy; 2019 Marc-Andre Michaud</h4>
+        </footer>
+    </div>
+    <!-- Edit Feedback Page -->
+
+
+    <div data-role="page" id="mmSettingsPage">
+
+        <header data-position="fixed">
+            <hgroup>
+            <h1 ><img src="img/logo.jpg" alt="Final Logo" class="responsive1">STARtrader</h1>
+            </hgroup>
+            <nav data-role="navbar" data-grid="c">
+                <ul>
+                    <li><a data-theme="a" data-icon="home" href="#mmHomePage">Home</a></li>
+                    <li><a data-theme="a" data-icon="plus" href="#mmAddFeedbackPage">Add</a></li>
+                    <li><a data-theme="a" data-icon="grid" href="#mmViewFeedbackPage">Reviews</a></li>
+                    <li><a data-theme="a" data-icon="gear" href="#"
+                            class="ui-button-active ui-state-persist">Settings</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+
+        <div role="main" class="ui-content">
+
+            <form>
+                <label for="text-1">Default Reviewer Email:</label>
+                <input type="text" name="mmDefaultEmail" id="mmDefaultEmail">
+            </form>
+            <button id="mmSaveDefaults" class="ui-btn ui-corner-all ui-btn-c" data-theme="b" onclick='AddEmail()'>Save
+                Defaults</button>
+            <button id="mmClearDatabase" class="ui-btn ui-corner-all ui-btn-b">Clear Database</button>
+
+        </div><!-- /content -->
+
+        <footer data-role="footer" data-theme="b" data-position="fixed">
+            <h4>&copy; 2019 Marc-Andre Michaud</h4>
+        </footer>
+    </div><!-- Settings Page -->
+
+
+</body>
+
+</html>

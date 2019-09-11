@@ -1,0 +1,64 @@
+
+*{
+	/* Universal reset: */
+	margin:0;
+	padding:0;
+}
+
+#mmHomePage, #mmAddFeedbackPage, #mmViewFeedbackPage, #mmEditFeedbackPage, #mmSettingsPage{
+	background-image: url(../img/metal.jpg);
+	color: white;
+}
+.responsive1 {
+	width: 100%;
+	max-width: 100px;
+	height: auto;
+  }
+  .container {
+    padding: 5px;
+  }
+
+h1,h2,h3{
+	font-family:"Palatino";
+	text-shadow:0 1px 1px black;
+}
+
+h1{
+	/* The logo text */
+	font-family: "Impact";
+	font-size:3.5em;
+	padding:0.5em 0 0;
+}
+
+h3{
+	/* The slogan text */
+	font-family: "Bookman";
+	font-size:2em;
+	font-weight:normal;
+	font-style: italic;
+	margin:0 0 1em;
+}
+
+h2{
+	font-size:2.2em;
+	font-weight:normal;
+	letter-spacing:0.01em;
+	text-transform:uppercase;
+}
+
+#mmHomePage, #mmAddFeedbackPage, #mmViewFeedbackPage, #mmEditFeedbackPage, #mmSettingsPage{
+	margin:0 auto;
+	position:relative;
+}
+
+
+label.error{
+    color: #F00;
+    font-weight: bold;
+}
+
+input.error,
+select.error,
+textarea.error {
+    border: 1px red solid;
+}
